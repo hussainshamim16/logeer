@@ -18,8 +18,8 @@ submit.addEventListener('click', async () => {
 
    let email = document.getElementById('email').value;
    let pasword = document.getElementById('password').value;
-
-
+   
+   
    if(!email){
       alert("Enter Email !!");
       return;
@@ -43,7 +43,13 @@ submit.addEventListener('click', async () => {
       const collect = collection(db, "user");
       const response = await addDoc(collect,data)
       console.log(response)
+      let visible = document.getElementById('visible');
+      let cnt = document.getElementById('cnt');
+      cnt.className = "hide";
+      visible.className = "submit show";
       // console.log(email, pasword)
+      // email.value = ''
+      // pasword.value = ''
    }
    
 })
